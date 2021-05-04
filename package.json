@@ -1,0 +1,34 @@
+{
+  "name": "InstaDroid",
+  "version": "1.0.0",
+  "description": "InstaDroid is an Instagram Bot created with the help of Puppeteer.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/science-math-guy/InstaDroid.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/science-math-guy/InstaDroid/issues"
+  },
+  "homepage": "https://github.com/science-math-guy/InstaDroid#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "nodemailer": "^6.6.0",
+    "puppeteer": "^5.5.0",
+    "puppeteer-extra": "^3.1.18",
+    "puppeteer-extra-plugin-adblocker": "^2.11.11",
+    "puppeteer-extra-plugin-anonymize-ua": "^2.2.17",
+    "puppeteer-extra-plugin-minmax": "^1.1.2",
+    "puppeteer-extra-plugin-stealth": "^2.7.8"
+  }
+}
