@@ -1,6 +1,6 @@
-# InstaDroid
+# InstaDroid ☣️
 
-Instagram Bot created with the help of NodeJS.
+Instagram Bot created with the help of NodeJS 👷.
 
 ## Actual Actions:
 
