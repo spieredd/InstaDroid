@@ -44,13 +44,13 @@ const getScreenshot = async (username) => {
       waitUntil: "networkidle0",
   });
 
-  await page.waitForSelector('body > div.RnEpo.Yx5HN._4Yzd2 > div > div > button.aOOlW.bIiDR');
-  await page.click('body > div.RnEpo.Yx5HN._4Yzd2 > div > div > button.aOOlW.bIiDR');
+  // await page.waitForSelector('body > div.RnEpo.Yx5HN._4Yzd2 > div > div > button.aOOlW.bIiDR');
+  // await page.click('body > div.RnEpo.Yx5HN._4Yzd2 > div > div > button.aOOlW.bIiDR');
 
   await page.type('#loginForm > div > div:nth-child(1) > div > label > input', process.env.INSTAGRAM_USERNAME);
   await page.type('#loginForm > div > div:nth-child(2) > div > label > input', process.env.INSTAGRAM_PASSWORD);
 
-  await page.waitFor(2000);
+  await page.waitFor(200);
   await page.click('#loginForm > div > div:nth-child(3) > button > div');
   await page.waitForNavigation();
 
