@@ -1,14 +1,8 @@
-# InstaDroid ☣️
+# 🉑 InstaDroid ☣️
 
-Instagram Bot created with the help of NodeJS 👷.
+Instagram 🌌 Bot 🛰 created with the help of NodeJS 👷.
 
-![demo image](./public/assets/demo.png)
-
-## Actual Actions:
-
-Follows the 5 first Instagram Profile in your suggested followings.
-
-## Run the bot
+## Run the bot 🤖
 
 ### 1.Clone the repository
 
@@ -18,29 +12,32 @@ Follows the 5 first Instagram Profile in your suggested followings.
 
 ```npm install```
 
-### 3.Create a ```.env``` file
+### 3.Create a .env file
+
+Store these different environment variables inside this ```.env```file. 
+This will allow the bot to log in with your account credentials.
 
 ```
-USERNAME=YOUR_INSTAGRAM_USERNAME
-PASSWORD=YOUR_INSTAGRAM_PASSWORD
-EMAIL=YOUR_EMAIL_ADDRESS
-EMAIL_PASSWORD=YOUR_EMAIL_PASSWORD
+INSTAGRAM_USERNAME=YOUR_INSTAGRAM_USERNAME
+INSTAGRAM_PASSWORD=YOUR_INSTAGRAM_PASSWORD
 ```
 
 ### 4.Start the bot
 
+You are now ready to start the bot.
+Just enter the command below:
+
 ```npm start```
 
-## NPM Packages Used
+## NPM Packages Used 📚
 
 - puppeteer
 - puppeteer-extra
 - puppeteer-extra-plugin-stealth
-- puppeteer-extra-plugin-adblocker
-- puppeteer-extra-plugin-minmax
-- puppeteer-extra-plugin-anonymize-ua
+- express
+- ejs
 
-### (Dev dependencies)
+### (Dev dependencies) 🧑‍💻
 
 - nodemon
 - dotenv
