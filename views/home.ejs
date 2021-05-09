@@ -91,7 +91,11 @@
                             <button type="submit" class="btn btn-outline-warning">Run Bot</button>
                         </form>
                         <hr>
-                        <img class="demoImage" src="assets/test.png" alt="Demo Image">
+                        <% if(image){%>
+                            <img class="demoImage" src="assets/test.png" alt="Demo Image">
+                        <%}else{%>
+                            <img class="demoImage" src="assets/basic.png" alt="Demo Image">
+                        <%}%>
                     </div>
                     <div class="card-footer text-muted text-center">
                         Powered by <a class="text-muted" href="https://heroku.com/">Heroku</a>

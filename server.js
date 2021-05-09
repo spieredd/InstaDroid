@@ -16,6 +16,8 @@ require('dotenv').config();
 const express = require('express');
 const ejs = require('ejs');
 const puppeteer = require("puppeteer-extra");
+const fs = require('fs');
+
 
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 puppeteer.use(StealthPlugin());
@@ -64,18 +66,24 @@ const getScreenshot = async (username) => {
   await browser.close();
 };
 
+let image = false;
+
 app.get('/', (req, res) => {
   res.redirect('/home');
 });
 
 app.get('/home', (req, res) => {
-  res.render('home');
+  res.render('home', {
+    image: image
+  });
+  image = false;
 });
 
 app.post('/api/test', async (req, res)=> {
   let username = req.body.username;
   await getScreenshot(username);
   console.log('done');
+  image = true;
   res.redirect('/');
 });
 
