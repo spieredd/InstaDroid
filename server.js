@@ -75,6 +75,7 @@ app.get('/home', (req, res) => {
 app.post('/api/test', async (req, res)=> {
   let username = req.body.username;
   await getScreenshot(username);
+  console.log('done');
   res.redirect('/');
 });
 
