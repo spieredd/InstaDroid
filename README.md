@@ -1,8 +1,8 @@
 # 🉑 InstaDroid ☣️
 
-## General Informations
-
 ---
+
+## General Informations
 
 Instagram  🌌  Bot  🛰  created with the help of NodeJS 👷.
 
