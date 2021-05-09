@@ -2,6 +2,10 @@
 
 Instagram  🌌  Bot  🛰  created with the help of NodeJS 👷.
 
+---
+
+You can check out the online version of the bot: [InstaDroid](https://insta-droid-js.herokuapp.com/)
+
 ## Run the bot 🤖
 
 ### 1. Clone the repository
