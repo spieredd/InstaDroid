@@ -1,5 +1,7 @@
 # 🉑 InstaDroid ☣️
 
+---
+
 Instagram  🌌  Bot  🛰  created with the help of NodeJS 👷.
 
 ---
