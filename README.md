@@ -2,6 +2,8 @@
 
 Instagram Bot created with the help of NodeJS 👷.
 
+![demo image](./public/assets/demo.png)
+
 ## Actual Actions:
 
 Follows the 5 first Instagram Profile in your suggested followings.
