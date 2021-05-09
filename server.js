@@ -1,99 +1,87 @@
+/*
+
+  InstaDroid
+
+  --
+
+  @science-math-guy
+  copyright 2020-21
+
+
+*/
+
+// environment variable
 require('dotenv').config();
 
-const nodemailer = require('nodemailer');
+const express = require('express');
+const ejs = require('ejs');
+const puppeteer = require("puppeteer-extra");
 
-const puppeteer = require('puppeteer-extra');
+const StealthPlugin = require("puppeteer-extra-plugin-stealth");
+puppeteer.use(StealthPlugin());
 
-const StealthPlugin = require('puppeteer-extra-plugin-stealth')
-puppeteer.use(StealthPlugin())
+const app = express();
 
-const AdblockerPlugin = require('puppeteer-extra-plugin-adblocker')
-puppeteer.use(AdblockerPlugin({ blockTrackers: true }))
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.set('view engine', 'ejs');
 
-const MinmaxPlugin = require('puppeteer-extra-plugin-minmax')();
-puppeteer.use(MinmaxPlugin);
+app.set("trust proxy", true);
+app.use((req, res, next) => {
+  if (!req.secure) return res.redirect("https://" + req.get("host") + req.url);
+  next();
+});
 
-const AnonymizeuaPlugin = require('puppeteer-extra-plugin-anonymize-ua')();
-puppeteer.use(AnonymizeuaPlugin);
-
-
-const proxies = {
-  'useragent1': 'http://user:pass@85.237.57.198:44959',
-  'useragent2': 'http://user:pass@116.0.2.94:43379',
-  'useragent3': 'http://user:pass@186.86.247.169:39168',
-};
-
-(async() => {
-
-  console.log('Starting new process...')
-
+const getScreenshot = async (username) => {
   const browser = await puppeteer.launch({
-    headless: false,
-    args: ['--no-sandbox']
+      headless: true,
+      args: ["--no-sandbox"],
   });
   const page = await browser.newPage();
   await page.setViewport({ width: 800, height: 600 });
-
-  await page.minimize();
-  await page.maximize();
-
-  await page.goto('https://instagram.com/', {
-      "waitUntil" : "networkidle0"
+  await page.goto(`https://instagram.com/`, {
+      waitUntil: "networkidle0",
   });
 
-  console.log('On Instagram.');
+  await page.waitForSelector('body > div.RnEpo.Yx5HN._4Yzd2 > div > div > button.aOOlW.bIiDR');
+  await page.click('body > div.RnEpo.Yx5HN._4Yzd2 > div > div > button.aOOlW.bIiDR');
 
-  await page.waitForSelector('#loginForm > div > div:nth-child(1) > div > label > input');
-  if ((await page.$('body > div.RnEpo.Yx5HN > div > div > div > div.mt3GC > button.aOOlW.bIiDR')) !== null) {
-      await page.click('body > div.RnEpo.Yx5HN > div > div > div > div.mt3GC > button.aOOlW.bIiDR');
-  }
-  await page.type('#loginForm > div > div:nth-child(1) > div > label > input', process.env.USERNAME);
-  await page.type('#loginForm > div > div:nth-child(2) > div > label > input', process.env.PASSWORD);
-  await page.click('#loginForm > div > div:nth-child(3) > button');
+  await page.type('#loginForm > div > div:nth-child(1) > div > label > input', process.env.INSTAGRAM_USERNAME);
+  await page.type('#loginForm > div > div:nth-child(2) > div > label > input', process.env.INSTAGRAM_PASSWORD);
+
+  await page.waitFor(2000);
+  await page.click('#loginForm > div > div:nth-child(3) > button > div');
   await page.waitForNavigation();
 
-  console.log('Logged in.');
+  await page.waitForSelector('#react-root > section > nav > div._8MQSO.Cx7Bp > div > div > div.LWmhU._0aCwM > div.pbgfb.Di7vw > div');
 
-  await page.goto('https://www.instagram.com/explore/people/suggested/');
-  await page.waitForSelector('#react-root > section > main > div > div.DPiy6.Igw0E.IwRSH.eGOV_._4EzTm.HVWg4 > div > div > div:nth-child(1) > div.Igw0E.rBNOH.YBx95.ybXk5._4EzTm.soMvl');
+  await page.goto(`https://instagram.com/${username}/`);
 
-  let i;
-  let selector='';
-  for(i=1;i<=5;i++){
-      selector=`#react-root > section > main > div > div.DPiy6.Igw0E.IwRSH.eGOV_._4EzTm.HVWg4 > div > div > div:nth-child(${i}) > div.Igw0E.rBNOH.YBx95.ybXk5._4EzTm.soMvl`;
-      await page.click(selector);
-  };
+  await page.waitFor(300);
 
-  // await page.goto('https://www.instagram.com/automated_generation/');
+  await page.screenshot({ path: `${__dirname}/public/assets/test.png` });
+  await browser.close();
+};
 
-  // await page.waitForSelector('#react-root > section > main > div > ul > li:nth-child(2) > a > span');
+app.get('/', (req, res) => {
+  res.redirect('/home');
+});
 
-  //await browser.close();
+app.get('/home', (req, res) => {
+  res.render('home');
+});
 
-  console.log('Done.');
+app.post('/api/test', async (req, res)=> {
+  let username = req.body.username;
+  await getScreenshot(username);
+  res.redirect('/');
+});
 
-})();
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`PORT:${PORT} - server listening`);
+});
 
 
-let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.EMAIL,
-      pass: process.env.EMAIL_PASSWORD
-    }
-  });
-
-  let mailOptions = {
-    from: process.env.EMAIL,
-    to: process.env.EMAIL,
-    subject: 'Sending Email using Node.js',
-    text: 'How are u bro ?'
-  };
-
-  transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });

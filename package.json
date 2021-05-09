@@ -4,7 +4,7 @@
   "description": "InstaDroid is an Instagram Bot created with the help of Puppeteer.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon server.js",
     "start": "node server.js"
   },
   "repository": {
@@ -23,6 +23,8 @@
   },
   "dependencies": {
     "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
     "nodemailer": "^6.6.0",
     "puppeteer": "^5.5.0",
     "puppeteer-extra": "^3.1.18",

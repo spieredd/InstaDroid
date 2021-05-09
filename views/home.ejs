@@ -1,0 +1,130 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaDroid - Instagram Online Bot</title>
+
+    <meta name="description" content="InstaDroid is an Instagram Bot created using PuppeteerJS and Express.">
+    <meta name="keywords" content="instagram, bot, instadroid, facebook, programming">
+    <meta name="author" content="science-math-guy">
+
+    <link rel="icon" type="image/png" href="/assets/logo.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" id="page-title" href="/">
+                <img id="logo" src="/assets/logo.png" alt="" width="25" height="25"
+                    class="d-inline-block align-text-top">
+                InstaDroid.js
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="card bg-dark">
+            <h4 class="card-header">InstaDroid.js</h4>
+            <div class="card-body">
+                <h5 class="card-title">AIO Instagram Bot</h5>
+                <hr>
+                <p class="card-text">InstaDroid.js is an Instagram Bot created with NodeJS (JavaScript Runtime).</p>
+                <p class="bold">Packages used</p>
+                <ul>
+                    <li>Puppeteer</li>
+                    <li>Express</li>
+                    <li>EJS</li>
+                </ul>
+                <hr>
+                <a href="https://github.com/science-math-guy/InstaDroid" class="btn btn-danger">View Repository</a>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-sm-6">
+                <div class="card bg-dark">
+                    <div class="card-body">
+                        <h5 class="card-title">Online Bot Test</h5>
+                        <hr>
+                        <p class="card-text">Test our Instagram Bot online by entering your username. The bot will then take a screenshot of your Instagram profile page.</p>
+                        <hr>
+                        <form action="/api/test" method="POST">
+                            <div class="mb-3">
+                                <label for="formEmail" class="form-label">Instagram Username</label>
+                                <input placeholder="E.g. spacex" type="text" class="form-control" id="formEmail"
+                                    aria-describedby="emailHelp" required name="username">
+                                <div id="emailHelp" class="form-text">We'll never share or store your Instagram username.
+                                </div>
+                            </div>
+                            <!-- <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="formCheck">
+                                <label class="form-check-label" for="formCheck">I agree with the <a href="">terms of conditions</a>.</label>
+                            </div> -->
+                            <hr>
+                            <button type="submit" class="btn btn-outline-warning">Run Bot</button>
+                        </form>
+                        <hr>
+                        <img class="demoImage" src="assets/test.png" alt="Demo Image">
+                    </div>
+                    <div class="card-footer text-muted text-center">
+                        Powered by <a class="text-muted" href="https://heroku.com/">Heroku</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-dark">
+                    <div class="card-body">
+                        <h5 class="card-title">Local Setup</h5>
+                        <hr>
+                        <p class="card-text">Set up InstaDroid.js locally for better performance and flexibility.</p>
+                        <hr>
+                        <h6 class="mb-4">1. Clone the repository</h6>
+                        <kbd>git clone https://github.com/science-math-guy/InstaDroid.git</kbd>
+                        <hr>
+                        <h6 class="mb-4">2. Install dependencies</h6>
+                        <kbd>npm install</kbd>
+                        <hr>
+                        <h6 class="mb-4">3. Run your bot !</h6>
+                        <kbd>npm start</kbd>
+                        <hr>
+                        <a href="https://github.com/science-math-guy/InstaDroid#readme" class="btn btn-outline-success">See documentation</a>
+                    </div>
+                    <div class="card-footer text-muted text-center">
+                        Install <a class="text-muted" href="https://nodejs.org/en/">NodeJS</a>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </main>
+</body>
+
+</html>
