@@ -51,51 +51,67 @@
         </div>
     </nav>
     <main>
-        <div class="card bg-dark">
-            <h4 class="card-header">InstaDroid.js</h4>
-            <div class="card-body">
-                <h5 class="card-title">AIO Instagram Bot</h5>
-                <hr>
-                <p class="card-text">InstaDroid.js is an Instagram Bot created with NodeJS (JavaScript Runtime).</p>
-                <p class="bold">Packages used</p>
-                <ul>
-                    <li>Puppeteer</li>
-                    <li>Express</li>
-                    <li>EJS</li>
-                </ul>
-                <hr>
-                <a href="https://github.com/science-math-guy/InstaDroid" class="btn btn-danger">View Repository</a>
+        <div class="header">
+            <div class="dotrow">
+                <span class="red dot"></span>
+                <span class="yellow dot"></span>
+                <span class="green dot"></span>
             </div>
+            <h1 class="brand_name">www.insta-droid-js.herokuapp.com</h1>
+            <span style="width:100px;"></span>
         </div>
-        <div class="row mt-4">
-            <div class="col-sm-6">
-                <div class="card bg-dark">
-                    <div class="card-body">
-                        <h5 class="card-title">Online Bot Test</h5>
-                        <hr>
-                        <p class="card-text">Test our Instagram Bot online by entering your username. The bot will then take a screenshot of your Instagram profile page.</p>
-                        <hr>
-                        <form action="/api/test" method="POST">
-                            <div class="mb-3">
-                                <label for="formEmail" class="form-label">Instagram Username</label>
-                                <input placeholder="E.g. spacex" type="text" class="form-control" id="formEmail"
-                                    aria-describedby="emailHelp" required name="username">
-                                <div id="emailHelp" class="form-text">We'll never share or store your Instagram username.
+        <div class="card bg-dark" id="main-card">
+            <div class="card bg-dark">
+                <h5 class="card-header"><span class="badge bg-warning text-dark">InstaDroid</span> <span
+                        class="badge bg-secondary">v0.1</span></h5>
+                <div class="card-body">
+                    <h5 class="card-title">AIO Instagram Bot</h5>
+                    <hr>
+                    <p class="card-text">InstaDroid.js is an Instagram Bot created with NodeJS (JavaScript Runtime).</p>
+                    <p class="bold">Packages used</p>
+                    <ul>
+                        <li><span class="badge bg-success">Puppeteer</span></li>
+                        <li><span class="badge bg-danger">Express</span></li>
+                        <li><span class="badge bg-primary">EJS</span></li>
+                    </ul>
+                    <hr>
+                    <a href="https://github.com/science-math-guy/InstaDroid" class="btn btn-outline-danger">View
+                        Repository</a>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-sm-6">
+                    <div class="card bg-dark">
+                        <div class="card-body">
+                            <h5 class="card-title">Online Bot Test</h5>
+                            <hr>
+                            <p class="card-text">Test our Instagram Bot online by entering your username. The bot will
+                                then take a screenshot of your Instagram profile page.</p>
+                            <hr>
+                            <form action="/api/test" method="POST">
+                                <div class="mb-3">
+                                    <label for="formEmail" class="form-label">Instagram Username</label>
+                                    <input placeholder="E.g. spacex" type="text" class="form-control" id="formEmail"
+                                        aria-describedby="emailHelp" required name="username">
+                                    <div id="emailHelp" class="form-text">We'll never share or store your Instagram
+                                        username.
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- <div class="mb-3 form-check">
+                                <!-- <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="formCheck">
                                 <label class="form-check-label" for="formCheck">I agree with the <a href="">terms of conditions</a>.</label>
                             </div> -->
+                                <hr>
+                                <button type="submit" class="btn btn-outline-warning">Run Bot</button>
+                            </form>
                             <hr>
-                            <button type="submit" class="btn btn-outline-warning">Run Bot</button>
-                        </form>
-                        <hr>
-                        <% if(image){%>
-                            <img class="demoImage" src="assets/test.png" alt="Demo Image">
-                        <%}else{%>
-                            <img class="demoImage" src="assets/basic.png" alt="Demo Image">
-                        <%}%>
+                            <div class="text-center">
+                                <% if(image){%>
+                                <img class="demoImage mx-auto d-bloc rounded" src="assets/test.png" alt="Demo Image">
+                                <%}else{%>
+                                <img class="demoImage mx-auto d-bloc rounded" src="assets/basic.png" alt="Demo Image">
+                                <%}%>
+                        </div>
                     </div>
                     <div class="card-footer text-muted text-center">
                         Powered by <a class="text-muted" href="https://heroku.com/">Heroku</a>
@@ -127,6 +143,7 @@
                 
             </div>
             
+        </div>
         </div>
     </main>
 </body>

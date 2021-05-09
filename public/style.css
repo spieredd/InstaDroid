@@ -21,47 +21,170 @@ h6,
 p,
 li,
 a,
-label{
-    color:rgba(255, 255, 255, 0.9);
+label {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 #formPassword,
 #formEmail,
-#formCheck{
-    background-color:rgba(255, 255, 255, 0.8);
-    border-color:rgba(255, 255, 255, 0.8);
+#formCheck {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.8);
 }
 
-hr{
+hr {
     border-top: 1px solid rgb(130, 130, 130);
 }
 
-nav{
-    height:7.5vh;
+nav {
+    height: 7.5vh;
 }
 
-main{
-    padding: 5vh 15vw;
+main {
+    padding: 5vh 10vw;
 }
 
-#logo{
+#logo {
     opacity: 0.9;
 }
 
-#page-title{
-    color:rgb(255, 255, 185);
+#page-title {
+    color: rgb(255, 255, 185);
     font-weight: 600;
 }
 
-.bold{
+.bold {
     font-weight: 600;
 }
 
-.demoImage{
-    margin-top:2vh;
-    width:90%
+.demoImage {
+    margin: 1vh 0;
+    width: 90%;
 }
 
-kbd{
-    background-color:black;
+kbd {
+    background-color: black;
+}
+
+.card{
+    border-color:rgba(255, 0, 0, 0.45);
+}
+
+#main-card{
+    border:none;
+    padding:50px;
+}
+
+#brand_name_div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+h5 {
+    font-weight: 500;
+}
+
+.header {
+    background-color: rgb(91, 91, 91);
+    border: none;
+    border-radius: 10px;
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    height:4vh;
+}
+
+.dotrow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 115px;
+}
+
+.dot {
+    height: 12.5px;
+    width: 12.5px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 100%;
+    margin: 8px 4px;
+    cursor: pointer;
+}
+
+.dot:nth-child(1) {
+    margin-left: 20px;
+}
+
+.red {
+    background-color: rgb(219, 96, 93);
+}
+
+.yellow {
+    background-color: rgb(234, 193, 67);
+}
+
+.green {
+    background-color: rgb(115, 206, 54);
+}
+
+.brand_name {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(228, 228, 228);
+    margin-top: 1vh;
+}
+
+@media only screen and (max-width: 1500px) {
+    main{
+        padding: 5vh 7vw;
+    }
+    #main-card{
+        border:none;
+        padding:45px;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    main{
+        padding: 5vh 6vw;
+    }
+    #main-card{
+        border:none;
+        padding:30px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    main{
+        padding: 3vh 5vw;
+    }
+    #main-card{
+        border:none;
+        padding:25px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    main{
+        padding: 3vh 4vw;
+    }
+    #main-card{
+        border:none;
+        padding:20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    main{
+        padding: 2vh 2vw;
+    }
+    #main-card{
+        border:none;
+        padding:15px;
+    }
 }

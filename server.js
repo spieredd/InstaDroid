@@ -29,11 +29,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.set('view engine', 'ejs');
 
-app.set("trust proxy", true);
-app.use((req, res, next) => {
-  if (!req.secure) return res.redirect("https://" + req.get("host") + req.url);
-  next();
-});
+// app.set("trust proxy", true);
+// app.use((req, res, next) => {
+//   if (!req.secure) return res.redirect("https://" + req.get("host") + req.url);
+//   next();
+// });
 
 const getScreenshot = async (username) => {
   const browser = await puppeteer.launch({
