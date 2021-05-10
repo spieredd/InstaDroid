@@ -35,7 +35,7 @@ INSTAGRAM_PASSWORD=YOUR_INSTAGRAM_PASSWORD
 You are now ready to start the bot.
 Just enter the command below:
 
-```npm start```
+```npm run bot```
 
 ---
 

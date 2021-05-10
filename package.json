@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "devStart": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "bot": "node index.js",
+    "devBot": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -22,10 +24,17 @@
     "nodemon": "^2.0.7"
   },
   "dependencies": {
+    "chalk": "^3.0.0",
+    "clear": "^0.1.0",
+    "configstore": "^5.0.1",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "figlet": "^1.5.0",
+    "inquirer": "^8.0.0",
+    "log-symbols": "^5.0.0",
     "nodemailer": "^6.6.0",
+    "ora": "^5.4.0",
     "puppeteer": "^5.5.0",
     "puppeteer-extra": "^3.1.18",
     "puppeteer-extra-plugin-adblocker": "^2.11.11",
